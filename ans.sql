@@ -158,3 +158,10 @@ SELECT po.OrderID, po.OrderDate, po.Status, s.SupplierName
 FROM PurchaseOrders po
 JOIN Suppliers s ON po.SupplierID = s.SupplierID
 WHERE po.SupplierID = 2;
+
+--query3
+SELECT c.CategoryName, SUM(pod.Quantity * pod.UnitPrice) AS TotalOrderValue
+FROM PurchaseOrderDetails pod
+JOIN Products p ON pod.ProductID = p.ProductID
+JOIN Categories c ON p.CategoryID = c.CategoryID
+GROUP BY c.CategoryName;
