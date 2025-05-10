@@ -165,3 +165,9 @@ FROM PurchaseOrderDetails pod
 JOIN Products p ON pod.ProductID = p.ProductID
 JOIN Categories c ON p.CategoryID = c.CategoryID
 GROUP BY c.CategoryName;
+
+-- query4
+SELECT ProductName, QuantityInStock, ReorderLevel
+FROM Products
+WHERE QuantityInStock <= ReorderLevel;
+
