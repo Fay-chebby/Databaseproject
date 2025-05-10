@@ -171,3 +171,7 @@ SELECT ProductName, QuantityInStock, ReorderLevel
 FROM Products
 WHERE QuantityInStock <= ReorderLevel;
 
+-- query5
+SELECT Username, Role
+FROM Users;
+
