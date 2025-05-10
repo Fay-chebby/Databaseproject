@@ -146,8 +146,15 @@ VALUES
 SET PasswordHash = 'newpass123', Role = 'Admin'
 WHERE Username = 'admin';
 
--- sample query 
+-- sample query
+-- query1 
 SELECT p.ProductID, p.ProductName, c.CategoryName, s.SupplierName, p.QuantityInStock, p.UnitPrice
 FROM Products p
 JOIN Categories c ON p.CategoryID = c.CategoryID
 JOIN Suppliers s ON p.SupplierID = s.SupplierID;
+
+-- query2
+SELECT po.OrderID, po.OrderDate, po.Status, s.SupplierName
+FROM PurchaseOrders po
+JOIN Suppliers s ON po.SupplierID = s.SupplierID
+WHERE po.SupplierID = 2;
