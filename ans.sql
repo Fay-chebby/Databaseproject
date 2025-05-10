@@ -146,4 +146,4 @@ VALUES
 SET PasswordHash = 'newpass123', Role = 'Admin'
 WHERE Username = 'admin';
 
--- sample 
+-- sample query 
