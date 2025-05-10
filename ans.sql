@@ -175,3 +175,24 @@ WHERE QuantityInStock <= ReorderLevel;
 SELECT Username, Role
 FROM Users;
 
+--query6
+SELECT ProductName, CreatedAt
+FROM Products
+ORDER BY CreatedAt DESC
+LIMIT 5;
+
+-- query7
+SELECT s.SupplierName, COUNT(po.OrderID) AS OrderCount
+FROM PurchaseOrders po
+JOIN Suppliers s ON po.SupplierID = s.SupplierID
+GROUP BY s.SupplierName
+ORDER BY OrderCount DESC
+LIMIT 1;
+
+-- query8
+SELECT pod.OrderID, p.ProductName, pod.Quantity, pod.UnitPrice
+FROM PurchaseOrderDetails pod
+JOIN Products p ON pod.ProductID = p.ProductID
+ORDER BY pod.OrderID;
+
+--query9
