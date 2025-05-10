@@ -196,3 +196,5 @@ JOIN Products p ON pod.ProductID = p.ProductID
 ORDER BY pod.OrderID;
 
 --query9
+SELECT SUM(QuantityInStock * UnitPrice) AS TotalInventoryValue
+FROM Products;
