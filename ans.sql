@@ -198,3 +198,8 @@ ORDER BY pod.OrderID;
 --query9
 SELECT SUM(QuantityInStock * UnitPrice) AS TotalInventoryValue
 FROM Products;
+
+--query 10
+SELECT Username, Role
+FROM Users
+WHERE Role = 'Admin';
